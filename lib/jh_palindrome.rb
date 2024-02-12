@@ -2,7 +2,10 @@
 
 require_relative "jh_palindrome/version"
 
-module JhPalindrome
-  class Error < StandardError; end
-  # Your code goes here...
+class String
+  # Returns true is the string is a palindrome.
+  def palindrome?
+    processed = self.scan(/[a-z]/i).join.downcase
+    processed == processed.reverse
+  end
 end
